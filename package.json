@@ -1,0 +1,31 @@
+{
+  "name": "pedro-macedo-website",
+  "version": "1.0.0",
+  "description": "Pedro Macedo's website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier --write .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Pedro Macedo",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/react": "^3.30.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.2",
+    "@types/react": "19.2.7",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
+    "prettier": "^3.7.4"
+  }
+}
