@@ -4,6 +4,7 @@ import { Box, Flex, Button, Icon, Link, Stack } from '@chakra-ui/react'
 import { HiMenu } from 'react-icons/hi'
 import NextLink from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,10 +32,11 @@ export default function Header() {
       position="sticky"
       top={0}
       zIndex={1000}
-      bg="white"
-      borderBottom="1px solid"
+      bg="rgba(255, 255, 255, 0.1)"
+      backdropFilter="blur(4px)"
+      borderBottom="1px"
       borderColor="gray.200"
-      py={4}
+      py={2}
       px={{ base: 4, md: 8 }}
     >
       <Flex
@@ -51,55 +53,80 @@ export default function Header() {
           variant="ghost"
           aria-label="Navigation menu"
           color="gray.700"
+          border="1px solid"
+          borderColor="gray.300"
+          width="45px"
+          height="40px"
+          minW="40px"
+          padding={0}
           _hover={{ bg: 'gray.100', color: 'gray.900' }}
         >
           <Icon as={HiMenu} boxSize={5} />
         </Button>
-        {isOpen && (
-          <Box
-            position="absolute"
-            top="100%"
-            right={0}
-            mt={2}
-            bg="white"
-            border="1px solid"
-            borderColor="gray.200"
-            borderRadius="md"
-            boxShadow="md"
-            minW="150px"
-            py={2}
-          >
-            <Stack gap={2} px={4}>
-              <Link
-                as={NextLink}
-                href="/work"
-                color="gray.700"
-                _hover={{ color: 'gray.900' }}
-                onClick={() => setIsOpen(false)}
-              >
-                work
-              </Link>
-              <Link
-                as={NextLink}
-                href="/posts"
-                color="gray.700"
-                _hover={{ color: 'gray.900' }}
-                onClick={() => setIsOpen(false)}
-              >
-                posts
-              </Link>
-              <Link
-                as={NextLink}
-                href="/projects"
-                color="gray.700"
-                _hover={{ color: 'gray.900' }}
-                onClick={() => setIsOpen(false)}
-              >
-                projects
-              </Link>
-            </Stack>
-          </Box>
-        )}
+        <AnimatePresence mode="wait">
+          {isOpen && (
+            <motion.div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                right: 0,
+                marginTop: '8px',
+                backgroundColor: 'white',
+                border: '1px solid',
+                borderColor: '#E2E8F0',
+                borderRadius: '6px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                minWidth: '150px',
+                paddingTop: '8px',
+                paddingBottom: '8px',
+                transformOrigin: 'top right',
+              }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+            >
+              <Stack gap={2} px={4}>
+                <Link
+                  as={NextLink}
+                  href="/"
+                  color="gray.700"
+                  _hover={{ color: 'gray.900' }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  home
+                </Link>
+                {/* <Link
+                  as={NextLink}
+                  href="/work"
+                  color="gray.700"
+                  _hover={{ color: 'gray.900' }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  work
+                </Link>
+                <Link
+                  as={NextLink}
+                  href="/posts"
+                  color="gray.700"
+                  _hover={{ color: 'gray.900' }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  posts
+                </Link>
+                <Link
+                  as={NextLink}
+                  href="/projects"
+                  color="gray.700"
+                  _hover={{ color: 'gray.900' }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  projects
+                </Link> */}
+              </Stack>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Flex>
     </Box>
   )

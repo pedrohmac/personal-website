@@ -5,7 +5,7 @@ import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 export default function WorkPage() {
   return (
     <Container maxW="800px" px={{ base: 4, md: 8 }} py={{ base: 8, md: 12 }}>
-      <VStack align="stretch" spacing={6}>
+      <VStack align="stretch" gap={6}>
         <Box>
           <Heading
             as="h1"

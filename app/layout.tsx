@@ -3,8 +3,8 @@ import Header from './components/Header'
 import Providers from './components/Providers'
 
 export const metadata: Metadata = {
-  title: 'Personal Website',
-  description: 'Personal website',
+  title: 'Pedro Macedo - Homepage',
+  description: 'Pedro Macedo - Homepage',
 }
 
 export default function RootLayout({

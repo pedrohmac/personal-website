@@ -1,147 +1,93 @@
 'use client'
 
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  Link,
-  Icon,
-} from '@chakra-ui/react'
-import { FaGithub, FaInstagram } from 'react-icons/fa'
-import Image from 'next/image'
+import { Box, Container, VStack } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import Hero from './components/Hero'
+import Work from './components/Work'
+import Bio from './components/Bio'
+import Interests from './components/Interests'
+import SocialLinks from './components/SocialLinks'
+
+const MotionContainer = motion(Container)
+const MotionVStack = motion(VStack)
+
+// Data configuration
+const bioEvents = [
+  { year: '1997', event: 'Born in the south of Brazil' },
+  { year: '2017', event: 'Infantryman at Brazilian Army' },
+  { year: '2019', event: 'Data Engineer at EEmovel' },
+  { year: '2022', event: 'Software Engineer at ChangeCX' },
+  { year: '2024', event: 'Data Engineer at Hippo' },
+]
+
+const workDescription = `A data engineer and cloud-focused developer, with a strong drive to build systems that actually work in the real world. I enjoy turning messy, complex problems into clean, scalable solutions. Offline, I'm usually training combat sports or behind a camera, either driving, camping or hiking.`
+
+const interests = [
+  'Data Engineering',
+  'Combat Sports',
+  'Videography',
+  'Traveling',
+  'Hiking',
+  'Reading',
+  'Cooking'
+]
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/pedrohmac',
+    icon: FaGithub,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/pedrohmac',
+    icon: FaInstagram,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/pedro-hmac/',
+    icon: FaLinkedin,
+  },
+  // {
+  //   name: 'Twitter',
+  //   url: 'https://twitter.com',
+  //   icon: FaTwitter,
+  // },
+]
 
 export default function Home() {
   return (
-    <Container maxW="800px" px={{ base: 4, md: 8 }} py={{ base: 8, md: 12 }}>
-      <Box display="flex" flexDirection="column" gap={8}>
-        {/* Profile Picture */}
-        <Box display="flex" justifyContent="center" mb={1}>
-          <Box
-            position="relative"
-            width={{ base: '120px', md: '120px' }}
-            height={{ base: '120px', md: '120px' }}
-            borderRadius="full"
-            overflow="hidden"
-            border="2px solid"
-            borderColor="gray.200"
-          >
-            <Image
-              src="/images/profile.png"
-              alt="Profile Picture"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </Box>
-        </Box>
+    <MotionContainer
+      maxW="800px"
+      px={{ base: 4, md: 8 }}
+      py={{ base: 8, md: 16 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <MotionVStack
+        align="stretch"
+        gap={10}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <Hero
+          name="Pedro Macedo"
+          title="Data Engineer @ Hippo"
+          profileImage="/images/profile.png"
+        />
 
-        {/* Name */}
-        <Box>
-          <Heading
-            as="h1"
-            size={{ base: 'xl', md: '2xl' }}
-            fontWeight="bold"
-            mb={2}
-            textAlign="center"
-          >
-            Pedro Macedo
-          </Heading>
-        </Box>
+        <Work description={workDescription} />
 
-        {/* Title/Job */}
-        <Box>
-          <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600" textAlign="center">
-            Data Engineer @ Hippo
-          </Text>
-        </Box>
+        <Bio events={bioEvents} />
 
-        {/* Work Section */}
-        <Box>
-          <Heading
-            as="h2"
-            size={{ base: 'md', md: 'lg' }}
-            fontWeight="semibold"
-            mb={4}
-          >
-            Work
-          </Heading>
-          <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.700" lineHeight="tall">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Text>
-        </Box>
+        <Interests interests={interests} />
 
-        {/* Bio Section */}
-        <Box>
-          <Heading
-            as="h2"
-            size={{ base: 'md', md: 'lg' }}
-            fontWeight="semibold"
-            mb={4}
-          >
-            Bio
-          </Heading>
-          <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.700" lineHeight="tall">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </Text>
-        </Box>
-
-        {/* Hobby Section */}
-        <Box>
-          <Heading
-            as="h2"
-            size={{ base: 'md', md: 'lg' }}
-            fontWeight="semibold"
-            mb={4}
-          >
-            Hobbies
-          </Heading>
-          <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.700" lineHeight="tall">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
-          </Text>
-        </Box>
-
-        {/* Social Links */}
-        <Box pt={4}>
-          <Box display="flex" gap={6} flexWrap="wrap">
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="gray.700"
-              _hover={{ color: 'gray.900' }}
-              display="flex"
-              alignItems="center"
-              gap={2}
-            >
-              <Icon as={FaInstagram} boxSize={5} />
-              <Text fontSize={{ base: 'sm', md: 'md' }}>Instagram</Text>
-            </Link>
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="gray.700"
-              _hover={{ color: 'gray.900' }}
-              display="flex"
-              alignItems="center"
-              gap={2}
-            >
-              <Icon as={FaGithub} boxSize={5} />
-              <Text fontSize={{ base: 'sm', md: 'md' }}>GitHub</Text>
-            </Link>
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+        <SocialLinks links={socialLinks} />
+      </MotionVStack>
+    </MotionContainer>
   )
 }
 
