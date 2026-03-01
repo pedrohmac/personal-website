@@ -113,7 +113,7 @@ export default function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   posts
-                </Link>
+                </Link> */}
                 <Link
                   as={NextLink}
                   href="/projects"
@@ -122,7 +122,7 @@ export default function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   projects
-                </Link> */}
+                </Link>
               </Stack>
             </motion.div>
           )}

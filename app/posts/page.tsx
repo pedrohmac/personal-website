@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 
 export default function PostsPage() {
   return (
@@ -9,7 +9,7 @@ export default function PostsPage() {
         <Box>
           <Heading
             as="h1"
-            size={{ base: 'xl', md: '2xl' }}
+            size={{ base: "xl", md: "2xl" }}
             fontWeight="bold"
             mb={4}
           >
@@ -18,13 +18,16 @@ export default function PostsPage() {
         </Box>
 
         <Box>
-          <Text fontSize={{ base: 'sm', md: 'md' }} color="gray.700" lineHeight="tall">
+          <Text
+            fontSize={{ base: "sm", md: "md" }}
+            color="gray.700"
+            lineHeight="tall"
+          >
             This is the posts page. Add your blog posts, articles, and thoughts
             here.
           </Text>
         </Box>
       </VStack>
     </Container>
-  )
+  );
 }
-
