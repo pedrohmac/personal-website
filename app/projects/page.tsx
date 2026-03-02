@@ -42,7 +42,7 @@ export default function ProjectsPage() {
       transition={{ duration: 0.5 }}
     >
       <Box>
-        <Heading as="h1" size={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={8}>
+        <Heading as="h1" size={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={16}>
           Projects
         </Heading>
 
@@ -53,11 +53,7 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.15 }}
-              border="1px solid"
-              borderColor="gray.200"
-              borderRadius="lg"
-              overflow="hidden"
-              _hover={{ borderColor: "gray.400" }}
+              textAlign="center"
             >
               <Link
                 href={project.url}
@@ -69,11 +65,13 @@ export default function ProjectsPage() {
                 <Image
                   src={project.image}
                   alt={project.name}
-                  width="100%"
-                  height={{ base: "180px", md: "160px" }}
+                  boxSize={{ base: "100px", md: "120px" }}
+                  borderRadius="22%"
                   objectFit="cover"
+                  mx="auto"
+                  boxShadow="0 4px 14px rgba(0, 0, 0, 0.15)"
                 />
-                <Box p={{ base: 4, md: 5 }}>
+                <Box mt={4}>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
                     fontWeight="semibold"
