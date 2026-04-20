@@ -16,6 +16,13 @@ const MotionBox = motion(Box);
 
 const projects = [
   {
+    name: "Maestro",
+    description:
+      "A native macOS app that gives you a visual project board backed by autonomous AI coding agents. Describe what you want built, drag tasks through columns, and watch AI agents write code, run tests, and commit changes in real time.",
+    url: "https://github.com/pedrohmac/maestro",
+    image: "/images/maestro.gif",
+  },
+  {
     name: "Ritmo",
     description:
       "I've turned the spreadsheet I used to track my life into an app that I'd actually use. Track habits, set reminders, and visualize your progress over time.",

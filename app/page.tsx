@@ -2,7 +2,7 @@
 
 import { Box, Container, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode } from "react-icons/fa";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import Bio from "./components/Bio";
@@ -35,6 +35,13 @@ const interests = [
 ];
 
 const projects = [
+  {
+    name: "Maestro",
+    description:
+      "Manage software projects with AI agents — no coding required",
+    url: "https://github.com/pedrohmac/maestro",
+    icon: FaLaptopCode,
+  },
   {
     name: "Ritmo",
     description:
