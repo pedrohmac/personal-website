@@ -18,9 +18,9 @@ const projects = [
   {
     name: "Maestro",
     description:
-      "A native macOS app that gives you a visual project board backed by autonomous AI coding agents. Describe what you want built, drag tasks through columns, and watch AI agents write code, run tests, and commit changes in real time.",
-    url: "https://github.com/pedrohmac/maestro",
-    image: "/images/maestro.gif",
+      "An open source native macOS app that gives you a visual project board backed by autonomous AI coding agents. Describe what you want built, drag tasks through columns, and watch AI agents write code, run tests, and commit changes in real time.",
+    url: "https://getmaestro.dev/",
+    image: "/images/maestro.svg",
   },
   {
     name: "Ritmo",
