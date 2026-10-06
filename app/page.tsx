@@ -2,7 +2,7 @@
 
 import { Box, Container, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode, FaStopwatch } from "react-icons/fa";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import Bio from "./components/Bio";
@@ -54,6 +54,12 @@ const projects = [
     description: "Data consulting for growing businesses",
     url: "https://msvdata.com",
     icon: FaGlobe,
+  },
+  {
+    name: "MatScore",
+    description: "Interactive scoreboard for Jiu-Jitsu tournaments",
+    url: "https://matscore.net",
+    icon: FaStopwatch,
   },
 ];
 

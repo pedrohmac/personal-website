@@ -36,6 +36,13 @@ const projects = [
     url: "https://msvdata.com",
     image: "/images/msvdata.png",
   },
+  {
+    name: "MatScore",
+    description:
+      "An interactive scoreboard for Brazilian Jiu-Jitsu tournaments. Track points, advantages, penalties and the match clock from any browser, with keyboard shortcuts for fast scoring at the mat.",
+    url: "https://matscore.net",
+    image: "/images/matscore.svg",
+  },
 ];
 
 export default function ProjectsPage() {
