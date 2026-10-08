@@ -2,7 +2,7 @@
 
 import { Box, Container, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode, FaStopwatch } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode, FaStopwatch, FaBoxes, FaCodeBranch, FaPiggyBank } from "react-icons/fa";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import Bio from "./components/Bio";
@@ -60,6 +60,24 @@ const projects = [
     description: "Interactive scoreboard for Jiu-Jitsu tournaments",
     url: "https://matscore.net",
     icon: FaStopwatch,
+  },
+  {
+    name: "nevershort",
+    description: "Shopify app that tells you what to reorder and when",
+    url: "https://nevershort.app",
+    icon: FaBoxes,
+  },
+  {
+    name: "AdGit",
+    description: "Git-style version control for Google Ads campaigns",
+    url: "https://adgit.io",
+    icon: FaCodeBranch,
+  },
+  {
+    name: "Quita Fácil",
+    description: "AI debt payoff plans for Brazilians",
+    url: "https://quitafacil.net",
+    icon: FaPiggyBank,
   },
 ];
 

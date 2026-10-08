@@ -43,6 +43,27 @@ const projects = [
     url: "https://matscore.net",
     image: "/images/matscore.svg",
   },
+  {
+    name: "nevershort",
+    description:
+      "A Shopify app that tells merchants what to reorder and when. It learns sales velocity from orders (bundles included), factors in supplier lead times, and sends a Monday email ranking every variant by how urgently it needs restocking.",
+    url: "https://nevershort.app",
+    image: "/images/nevershort.svg",
+  },
+  {
+    name: "AdGit",
+    description:
+      "Git-style version control for Google Ads campaigns. Snapshots campaign configurations on a schedule, shows field-level diffs between any two versions, and generates a reviewable rollback plan to restore a previous state.",
+    url: "https://adgit.io",
+    image: "/images/adgit.svg",
+  },
+  {
+    name: "Quita Fácil",
+    description:
+      "An AI debt payoff planner for Brazil. Enter your debts or upload your statements and get a report that compares payoff strategies, shows what each one costs, and checks your interest rates against Banco Central averages.",
+    url: "https://quitafacil.net",
+    image: "/images/quitafacil.svg",
+  },
 ];
 
 export default function ProjectsPage() {
