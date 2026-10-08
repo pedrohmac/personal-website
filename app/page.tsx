@@ -2,7 +2,7 @@
 
 import { Box, Container, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaMobileAlt, FaGlobe, FaLaptopCode, FaStopwatch, FaBoxes, FaCodeBranch, FaPiggyBank } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaGlobe, FaLaptopCode, FaBoxes, FaCodeBranch, FaPiggyBank } from "react-icons/fa";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import Bio from "./components/Bio";
@@ -43,25 +43,6 @@ const projects = [
     icon: FaLaptopCode,
   },
   {
-    name: "Ritmo",
-    description:
-      "I've turned the spreadsheet I used to track my life into an app that I'd actually use",
-    url: "https://github.com/pedrohmac",
-    icon: FaMobileAlt,
-  },
-  {
-    name: "msvdata.com",
-    description: "Data consulting for growing businesses",
-    url: "https://msvdata.com",
-    icon: FaGlobe,
-  },
-  {
-    name: "MatScore",
-    description: "Interactive scoreboard for Jiu-Jitsu tournaments",
-    url: "https://matscore.net",
-    icon: FaStopwatch,
-  },
-  {
     name: "nevershort",
     description: "Shopify app that tells you what to reorder and when",
     url: "https://nevershort.app",
@@ -78,6 +59,12 @@ const projects = [
     description: "AI debt payoff plans for Brazilians",
     url: "https://quitafacil.net",
     icon: FaPiggyBank,
+  },
+  {
+    name: "msvdata.com",
+    description: "Data consulting for growing businesses",
+    url: "https://msvdata.com",
+    icon: FaGlobe,
   },
 ];
 
