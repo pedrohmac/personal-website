@@ -81,7 +81,7 @@ export default function ProjectsPage() {
           Projects
         </Heading>
 
-        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
+        <Grid templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }} gap={6}>
           {projects.map((project, index) => (
             <MotionBox
               key={index}
@@ -100,15 +100,15 @@ export default function ProjectsPage() {
                 <Image
                   src={project.image}
                   alt={project.name}
-                  boxSize={{ base: "100px", md: "120px" }}
+                  boxSize={{ base: "72px", md: "80px" }}
                   borderRadius="22%"
                   objectFit="cover"
                   mx="auto"
                   boxShadow="0 4px 14px rgba(0, 0, 0, 0.15)"
                 />
-                <Box mt={4}>
+                <Box mt={3}>
                   <Text
-                    fontSize={{ base: "md", md: "lg" }}
+                    fontSize={{ base: "sm", md: "md" }}
                     fontWeight="semibold"
                     color="gray.800"
                     mb={1}
@@ -116,9 +116,9 @@ export default function ProjectsPage() {
                     {project.name}
                   </Text>
                   <Text
-                    fontSize={{ base: "sm", md: "md" }}
+                    fontSize={{ base: "xs", md: "sm" }}
                     color="gray.600"
-                    lineHeight="tall"
+                    lineHeight="base"
                   >
                     {project.description}
                   </Text>
