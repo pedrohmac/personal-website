@@ -17,50 +17,45 @@ const MotionBox = motion(Box);
 const projects = [
   {
     name: "Maestro",
-    description:
-      "An open source native macOS app that gives you a visual project board backed by autonomous AI coding agents. Describe what you want built, drag tasks through columns, and watch AI agents write code, run tests, and commit changes in real time.",
+    description: "An open source macOS project board run by AI coding agents.",
     url: "https://getmaestro.dev/",
     image: "/images/maestro.svg",
   },
   {
     name: "Ritmo",
     description:
-      "I've turned the spreadsheet I used to track my life into an app that I'd actually use. Track habits, set reminders, and visualize your progress over time.",
+      "I've turned the spreadsheet I used to track my life into an app that I'd actually use.",
     url: "https://github.com/pedrohmac",
     image: "/images/ritmo.png",
   },
   {
     name: "msvdata.com",
-    description:
-      "Data consulting for growing businesses. Helping companies make sense of their data through engineering, analytics, and cloud infrastructure.",
+    description: "Data consulting for growing businesses.",
     url: "https://msvdata.com",
     image: "/images/msvdata.png",
   },
   {
     name: "MatScore",
     description:
-      "An interactive scoreboard for Brazilian Jiu-Jitsu tournaments. Track points, advantages, penalties and the match clock from any browser, with keyboard shortcuts for fast scoring at the mat.",
+      "An interactive scoreboard for Brazilian Jiu-Jitsu tournaments.",
     url: "https://matscore.net",
     image: "/images/matscore.svg",
   },
   {
     name: "nevershort",
-    description:
-      "A Shopify app that tells merchants what to reorder and when. It learns sales velocity from orders (bundles included), factors in supplier lead times, and sends a Monday email ranking every variant by how urgently it needs restocking.",
+    description: "A Shopify app that tells merchants what to reorder and when.",
     url: "https://nevershort.app",
     image: "/images/nevershort.svg",
   },
   {
     name: "AdGit",
-    description:
-      "Git-style version control for Google Ads campaigns. Snapshots campaign configurations on a schedule, shows field-level diffs between any two versions, and generates a reviewable rollback plan to restore a previous state.",
+    description: "Git-style version control for ad campaigns.",
     url: "https://adgit.io",
     image: "/images/adgit.svg",
   },
   {
     name: "Quita Fácil",
-    description:
-      "An AI debt payoff planner for Brazil. Enter your debts or upload your statements and get a report that compares payoff strategies, shows what each one costs, and checks your interest rates against Banco Central averages.",
+    description: "An AI debt payoff planner for Brazil.",
     url: "https://quitafacil.net",
     image: "/images/quitafacil.svg",
   },
@@ -77,11 +72,19 @@ export default function ProjectsPage() {
       transition={{ duration: 0.5 }}
     >
       <Box>
-        <Heading as="h1" size={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={16}>
+        <Heading
+          as="h1"
+          size={{ base: "xl", md: "2xl" }}
+          fontWeight="bold"
+          mb={16}
+        >
           Projects
         </Heading>
 
-        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
+        <Grid
+          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+          gap={{ base: 4, md: 6 }}
+        >
           {projects.map((project, index) => (
             <MotionBox
               key={index}
@@ -100,15 +103,15 @@ export default function ProjectsPage() {
                 <Image
                   src={project.image}
                   alt={project.name}
-                  boxSize={{ base: "100px", md: "120px" }}
+                  boxSize={{ base: "72px", md: "80px" }}
                   borderRadius="22%"
                   objectFit="cover"
                   mx="auto"
                   boxShadow="0 4px 14px rgba(0, 0, 0, 0.15)"
                 />
-                <Box mt={4}>
+                <Box mt={3}>
                   <Text
-                    fontSize={{ base: "md", md: "lg" }}
+                    fontSize={{ base: "sm", md: "md" }}
                     fontWeight="semibold"
                     color="gray.800"
                     mb={1}
@@ -116,9 +119,9 @@ export default function ProjectsPage() {
                     {project.name}
                   </Text>
                   <Text
-                    fontSize={{ base: "sm", md: "md" }}
+                    fontSize={{ base: "xs", md: "sm" }}
                     color="gray.600"
-                    lineHeight="tall"
+                    lineHeight="base"
                   >
                     {project.description}
                   </Text>
