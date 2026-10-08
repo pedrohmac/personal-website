@@ -69,7 +69,7 @@ const projects = [
   },
   {
     name: "AdGit",
-    description: "Git-style version control for Google Ads campaigns",
+    description: "Git-style version control for ad campaigns",
     url: "https://adgit.io",
     icon: FaCodeBranch,
   },
